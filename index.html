@@ -109,6 +109,20 @@
     .project-card img { transition:transform .7s ease; }
     .project-card:hover img { transform:scale(1.06); }
     .nav-scrolled { background:rgba(2,6,23,.82)!important; border-bottom:1px solid rgba(148,163,184,.13); }
+    .tech-marquee-track {
+      display:flex;
+      width:max-content;
+      gap:2.5rem;
+      animation:tech-marquee 22s linear infinite;
+      will-change:transform;
+    }
+    @keyframes tech-marquee {
+      from { transform:translate3d(0,0,0); }
+      to { transform:translate3d(-50%,0,0); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tech-marquee-track { animation:none; }
+    }
     .brand-logo { position:relative; display:block; width:14rem; height:3.5rem; overflow:hidden; }
     .brand-logo img { position:absolute; top:-2.4rem; left:0; width:100%; height:auto; max-width:none; }
     html[data-theme="polar"] .brand-logo img { filter:drop-shadow(0 3px 8px rgba(15,23,42,.18)); }
@@ -328,7 +342,7 @@
 
     <!-- TECH MARQUEE -->
     <section class="border-y border-white/5 bg-white/[.02] py-6 overflow-hidden">
-      <div class="flex min-w-max animate-marquee gap-10 text-sm font-semibold uppercase tracking-[.22em] text-slate-500">
+      <div class="tech-marquee-track text-sm font-semibold uppercase tracking-[.22em] text-slate-500">
         <span>Angular</span><span>React</span><span>Next.js</span><span>Node.js</span><span>Java</span><span>.NET</span><span>TypeScript</span><span>AWS</span><span>Azure</span><span>UI/UX</span>
         <span>Angular</span><span>React</span><span>Next.js</span><span>Node.js</span><span>Java</span><span>.NET</span><span>TypeScript</span><span>AWS</span><span>Azure</span><span>UI/UX</span>
       </div>

@@ -109,6 +109,9 @@
     .project-card img { transition:transform .7s ease; }
     .project-card:hover img { transform:scale(1.06); }
     .nav-scrolled { background:rgba(2,6,23,.82)!important; border-bottom:1px solid rgba(148,163,184,.13); }
+    .brand-logo { position:relative; display:block; width:14rem; height:3.5rem; overflow:hidden; }
+    .brand-logo img { position:absolute; top:-2.4rem; left:0; width:100%; height:auto; max-width:none; }
+    html[data-theme="polar"] .brand-logo img { filter:drop-shadow(0 3px 8px rgba(15,23,42,.18)); }
   </style>
   <script>
     document.documentElement.dataset.theme = localStorage.getItem('trenchcoder-theme') || 'polar';
@@ -196,9 +199,10 @@
   <!-- NAVBAR -->
   <header id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
     <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 lg:px-8">
-      <a href="#home" class="flex items-center gap-3 font-bold tracking-tight">
-        <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-cyan-400 to-violet-500 text-slate-950 shadow-lg shadow-cyan-500/20">TC</span>
-        <span class="text-lg">TrenchCoder<span class="text-cyan-400">.</span></span>
+      <a href="#home" class="flex items-center font-bold tracking-tight" aria-label="TrenchCoder Technologies home">
+        <span class="brand-logo">
+          <img src="images/logo.png" alt="TrenchCoder Technologies" width="1536" height="1024">
+        </span>
       </a>
 
       <div id="desktopMenu" class="hidden items-center gap-8 md:flex">
